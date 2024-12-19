@@ -1,0 +1,37 @@
+<section class="container">
+
+    <div class="shadow p-5">
+        <div>
+            <label for="titulo" class="form-label mt-3">Titulo</label>
+            <input type="text" class="form-control mt-1" id="titulo" placeholder="Introduce titulo"
+                [(ngModel)]="nuevoBlog.titulo" (blur)="validarCampos()">
+        </div>
+
+        <div>
+            <label for="imagen" class="form-label mt-3">Imagen</label>
+            <input type="text" class="form-control mt-1" id="imagen" placeholder="Introduce imagen"
+                [(ngModel)]="nuevoBlog.imagen" (blur)="validarCampos()">
+        </div>
+
+        <div>
+            <label for="texto" class="form-label mt-3">Texto</label>
+            <textarea class="form-control mt-1" id="texto" rows="5" placeholder="Introduce texto"
+                [(ngModel)]="nuevoBlog.texto" (blur)="validarCampos()"></textarea>
+        </div>
+
+        <div>
+            <label for="fecha_publicacion" class="form-label mt-3">Fecha Publicacion</label>
+            <input type="fecha_publicacion" class="form-control mt-1" id="fecha_publicacion"
+                placeholder="Introduce fecha publicacion" [(ngModel)]="nuevoBlog.fecha_publicacion"
+                (blur)="validarCampos()">
+        </div>
+
+    </div>
+
+
+    <button class="btn btn-secondary mt-5" (click)="guardarNoticia()" [disabled]="mensajeError">Guardar</button>
+
+    <hr>
+
+    <div class="container shadow" [innerHTML]="cargarDatos()"></div>
+</section>
