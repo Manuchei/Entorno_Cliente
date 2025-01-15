@@ -1,1 +1,9 @@
-<p>product-card works!</p>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ product?.name }}</h5>
+      <p class="card-text">Category: {{ product?.category }}</p>
+      <p class="card-text">Price: {{ product?.price }}</p>
+      <p class="card-text">Status: {{ product?.active ? 'Active' : 'Inactive' }}</p>
+      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
