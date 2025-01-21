@@ -1,0 +1,6 @@
+<app-product-filter (onFilter)="filterProducts($event)"></app-product-filter>
+<div class="row mt-4">
+  <div *ngFor="let product of filteredProducts" class="col-md-4">
+    <app-product-card [product]="product"></app-product-card>
+  </div>
+</div>

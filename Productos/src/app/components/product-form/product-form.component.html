@@ -1,0 +1,46 @@
+<form [formGroup]="productForm" (ngSubmit)="addProduct()" class="p-4 border rounded shadow-sm bg-light">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="name" class="form-label">Nombre del producto</label>
+            <input id="name" formControlName="name" class="form-control" placeholder="Ej. Camiseta" />
+        </div>
+
+        <div class="col-md-6">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea id="description" formControlName="description" class="form-control" rows="3"
+                placeholder="Ej. Camiseta de algodón 100%"></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label for="price" class="form-label">Precio</label>
+            <input id="price" formControlName="price" type="number" class="form-control" placeholder="Ej. 19.99" />
+        </div>
+
+        <div class="col-md-6">
+            <label for="category" class="form-label">Categoría</label>
+            <select id="category" formControlName="category" class="form-control">
+                <option value="">Selecciona una categoría</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="niño">Niño</option>
+            </select>
+        </div>
+
+        <div class="col-md-12">
+            <label for="image" class="form-label">URL de la Imagen</label>
+            <input id="image" formControlName="image" class="form-control"
+                placeholder="Ej. https://example.com/imagen.jpg" />
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-check">
+                <input id="active" formControlName="active" type="checkbox" class="form-check-input" />
+                <label for="active" class="form-check-label">¿Producto Activo?</label>
+            </div>
+        </div>
+
+        <div class="col-md-12 text-end">
+            <button type="submit" class="btn btn-success px-4">Añadir Producto</button>
+        </div>
+    </div>
+</form>
