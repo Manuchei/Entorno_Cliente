@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inseratr código JS en HTML</title>
+    <!--JavaScript Interno-->
+    <script>
+        function mostrarMensajeInterno() {
+            alert('¡Este es un mensaje desde el JavaScrpit Interno!')
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ejemplos Inserción de JavaScrpit</h1>
+
+    <!--Opción 1: JavaScrpit en línea-->
+    <button onclick="mostrarMensajeEnLinea()"> Click en mi (En Linea)</button>
+    <script>
+        function mostrarMensajeEnLinea() {
+            alert('¡Este es un mensaje de JavaScrpit en línea!')
+        }
+    </script>
+
+    <!--Opcion 2: JavaScrpit Internp-->
+    <button onclick="mostrarMensajeInterno()">Click en mi (Interno)</button>
+
+    <!--Opción 3: JavaScrpit Externo-->
+    <button onclick="mostrarMensajeExterno()">Click en mi (Externo)</button>
+
+    <!--Enlace JavaScript externo-->
+    <script src="PrimerEjemplo.js"></script>
+
+
+</body>
+
+</html>

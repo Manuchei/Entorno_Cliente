@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
 import { Page404Component } from './pages/page404/page404.component';
 
 export const routes: Routes = [
-    {path: '', pathMatch: 'full', redirectTo: 'home'},
-    {path: 'home', component: HomeComponent},
-    {path: 'servicios', component: ServiciosComponent},
-    {path: 'contacto', component: ContactoComponent},
-    //{path: '**', component: Page404Component},
-    {path: '**', redirectTo: 'home'}
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
+  { path: 'servicios', component: ServiciosComponent },
+  { path: 'contacto', component: ContactoComponent },
+  //{path: '**', component: Page404Component},
+  { path: '**', redirectTo: 'home' },
 ];

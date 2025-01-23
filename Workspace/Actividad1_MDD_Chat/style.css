@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carrito {
+    width: 70%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.carrito-table th, .carrito-table td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.carrito-table th {
+    background-color: #f4f4f4;
+    font-size: 1.2rem;
+}
+
+.carrito-table td {
+    font-size: 1.1rem;
+}
+
+.carrito-table td button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin: 0 5px;
+}
+
+.total-box {
+    text-align: right;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.total-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #666;
+}

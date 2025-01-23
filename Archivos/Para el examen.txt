@@ -1,0 +1,9 @@
+Crear proyecto: ng new NombreDelProyecto skip-tests
+instalar bootstrap: npm install bootstrap
+Iniciar proyecto en localhost: ng s -o
+Para utilizar bootstrap: angular.json styles añadir: "node_modules/bootstrap/dist/css/bootstrap.min.css" y en script "node_modules/bootstrap/dist/js/bootstrap.min.js"
+Para crear componentes:  ng generate component components/trabajador --skip-tests
+Si al crear el componente no la agrega automáticamente hacerlo manual en app.component.ts en "imports"
+Para el to way data binding: importar FormsModule en el ts y utilizar [(ngModel)]
+Para crear la interfaz: ng generate i interfaces/Itrabajador.ts
+Cuando se quiere poner una variable opcional en al interfaz se pone ? por ejemplo fechaNacimienmto? : Date

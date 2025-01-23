@@ -1,0 +1,23 @@
+.secciones {
+  margin: 20pt;
+}
+.accordion-item {
+  background-color: aquamarine;
+}
+.accordion-button {
+  background-color: rgb(137, 137, 211);
+}
+.btn-outline-success {
+  background-color: blue;
+  border-color: aliceblue;
+  color: white;
+}
+.btn-outline-success {
+  background-color: blue;
+  border-color: aliceblue;
+  color: white;
+}
+.cards-container{
+    display: flex;
+    flex-direction: row;
+}

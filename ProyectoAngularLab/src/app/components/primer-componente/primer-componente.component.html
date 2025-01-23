@@ -1,0 +1,31 @@
+<section>
+    <div class="contenedor">
+        <h3 [class]="color">Datos de contacto</h3>
+        <h2>{{nombreCompleto()}}</h2>
+        <!-- Introducción a la interpolación one data binding-->
+        <p class="green"><strong>Nombre: </strong>{{nombre}}</p>
+        <p><strong>Apellidos: </strong>{{apellidos}}</p>
+        <p><strong>Edad: </strong>{{edad}}</p>
+        <p><strong>Email: </strong>{{email}}</p>
+        <p><strong>Carrera actual: </strong>{{carreraActual}}</p>
+        <div [innerHTML]="infoPiloto()">
+        </div>
+        <div>
+            <a [href]="ruta" [class.red]="stock" [class.green]="sended">IR A GOOGLE</a>
+            <button [innerText]="contador" [hidden]="isHidden" (click)="myOnClick()">Click me!!!</button>
+            <input type="text" (input)="PintarDorsal($event)" placeholder="Introduce tu dorsal">
+            <p>{{texto}}</p>
+        </div>
+        <hr>
+        <br>
+    
+    </div>
+</section>
+
+<!-- One way data binding
+ 1) Interpolacion (Done) -> {{}}
+ 2) Property binding -> [propiedadDOM] = "prop/meto ts" -> Ckass binding
+ 3) Event binding -> (click)="miMetodo()" o $event (click)="miMetodo($event)"
+ 
+ Two way Data binding
+ 1)Importar Module en el ts -->

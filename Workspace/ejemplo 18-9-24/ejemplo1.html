@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostrasMensajeInterno()
+        {
+            alert('Esto es un mensaje de JavaScript Interno')
+        }
+    </script>
+    
+</head>
+<body>
+    <h1>Ejemplos de Inserción de JAvaScript</h1>
+    <button onclick="mostrarMensajeEnLinea()"> Click  me (En linea)
+        <script>
+          function mostrarMensajeEnLinea()
+          {
+            alert('Esto es un mensaje de JavaScript en linea!')
+          }
+        </script>
+    </button>
+
+    <br><br>
+
+    <button onclick="mostrasMensajeInterno()"> Click  me (Interno)</button>
+
+    <br><br>
+
+    <button onclick="mostrarMensajeExterno()"> Click en mi (Externo)</button>
+
+    <br><br>
+
+    <button onclick="mostrarMensajeExterno2()"> Click en mi (Externo2)</button>
+
+    <br><br>
+
+    <button onclick="mostrarMensajeExterno3()"> Click en mi (Externo3)</button>
+
+    <script src="ejemplo1.js"></script>
+    
+</body>
+</html>
