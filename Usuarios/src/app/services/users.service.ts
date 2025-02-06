@@ -1,26 +1,22 @@
-import { User } from './../interfaces/user';
-import { Injectable } from '@angular/core';
-import { USUARIOS } from '../db/users.db';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { lastValueFrom, Observable } from 'rxjs';
+import { User } from '../interfaces/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
+  httpClient = inject(HttpClient);
+  private baseUrl: string = 'https://peticiones.online/api/users';
 
-  private arrUsers: User[]
+  constructor() {}
 
-  constructor() { 
-    this.arrUsers = USUARIOS
+  getAllWithPromises(): Promise<User[]> {
+    return lastValueFrom(this.httpClient.get<User[]>(this.baseUrl));
   }
 
-  getAll(): User[] {
-    return this.arrUsers
+  getById(_id: string): Promise<User> {
+    return lastValueFrom(this.httpClient.get<User>(`${this.baseUrl}/${_id}`));
   }
-
-  getById(miId: number) : User | undefined{
-  return this.arrUsers.find((use)=> use.id == miId);
-}
-
-
-
 }

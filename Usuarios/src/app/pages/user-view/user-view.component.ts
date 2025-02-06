@@ -1,3 +1,4 @@
+import { BotoneraComponent } from '../../components/botonera/botonera.component';
 import { User } from './../../interfaces/user';
 import { UsersService } from './../../services/users.service';
 import { Component, inject } from '@angular/core';
@@ -5,34 +6,25 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-view',
-  imports: [],
+  imports: [BotoneraComponent],
   templateUrl: './user-view.component.html',
-  styleUrl: './user-view.component.css'
+  styleUrl: './user-view.component.css',
 })
 export class UserViewComponent {
+  miUsuario!: User;
 
-miUsuario!: User;
+  UsersService = inject(UsersService);
+  activatedRoute = inject(ActivatedRoute);
 
-UsersService = inject(UsersService)
-activatedRoute = inject(ActivatedRoute)
-router = inject(Router)
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(async (paramas: any) => {
+      let _id: string = paramas._id as string;
 
-ngOnInit(): void{
-  this.activatedRoute.params.subscribe((params: any) => {
-    let miId: number = params.id as number
-    let response = this.UsersService.getById(miId);
-
-    if(response != undefined){
-      this.miUsuario = response
-    }
-    else {
-      this.router.navigate(['/home'])
-    }
-  })
-}
-
-delete(): void {
-console.log("Hello form delete")  }
-  
-
+      try {
+        this.miUsuario = await this.UsersService.getById(_id);
+      } catch (err) {
+        console.log('Error al llamar a la API: ' + err);
+      }
+    });
+  }
 }

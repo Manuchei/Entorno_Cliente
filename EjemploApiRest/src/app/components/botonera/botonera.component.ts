@@ -1,6 +1,7 @@
 import { Router, RouterLink } from '@angular/router';
 import { SeriesService } from './../../services/series.service';
 import { Component, inject, Input } from '@angular/core';
+import { Serie } from '../../interfaces/serie';
 
 @Component({
   selector: 'app-botonera',
@@ -9,7 +10,6 @@ import { Component, inject, Input } from '@angular/core';
   styleUrl: './botonera.component.css',
 })
 export class BotoneraComponent {
-
   seriesService = inject(SeriesService);
   router = inject(Router);
 
@@ -21,7 +21,20 @@ export class BotoneraComponent {
     this.parent = '';
   }
 
-  borrarSerie(_id : string) {
-//Llamara al servicio para eliminar la serie
+  async borrarSerie(_id: string) {
+    //Llamara al servicio para eliminar la serie
+    let confirmacion = confirm(
+      'Esta seguro de que quiere eliminar la serie: ' + this._id
+    );
+    if (confirmacion) {
+      let response = await this.seriesService.delete(_id);
+      //Esto es particular de la API
+      if (response._id) {
+        alert('Se ha borrado correctamente la serie ' + response.title);
+        if (this.parent == 'view') {
+          this.router.navigate(['/series']);
+        }
+      }
     }
+  }
 }

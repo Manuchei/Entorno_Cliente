@@ -1,11 +1,10 @@
-import { UsersService } from './../../services/users.service';
 import { User } from './../../interfaces/user';
-import { Component, inject, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { BotoneraComponent } from "../botonera/botonera.component";
 
 @Component({
   selector: 'app-user-card',
-  imports: [RouterLink],
+  imports: [BotoneraComponent],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.css'
 })

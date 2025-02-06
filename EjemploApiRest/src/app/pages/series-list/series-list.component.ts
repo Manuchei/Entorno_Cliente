@@ -21,7 +21,7 @@ export class SeriesListComponent {
     //Usando Observables
     // this.serieService.getAllWithObservables().subscribe((data: Serie[]) => {
     //   this.arrSeries = data;
-    // });
+  // });
 
     //Usando Promesas
     try {

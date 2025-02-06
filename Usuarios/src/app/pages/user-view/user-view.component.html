@@ -1,13 +1,5 @@
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Detalle Usuario</title>
-</head>
-
-<body>
-
-
+<section>
+    <title>Detalle Usuario</title>>
     <div class="container mt-5">
         <div class="row align-items-center">
             <div class="col-md-4 text-center">
@@ -20,14 +12,9 @@
                 <h2>{{miUsuario.last_name}}</h2>
                 <p><strong>Nombre Usuario: </strong>{{miUsuario.username}}</p>
                 <p><strong>Email: </strong>{{miUsuario.email}}</p>
+                <app-botonera [parent]="'card'" [_id]="miUsuario._id"></app-botonera>
 
-                <div class="mt-4">
-                    <a class="btn btn-outline-danger me-2" (click)="delete()"> Eliminar</a>
-                    <a class="btn btn-outline-primary me-2">Actualizar</a>
-                    <a href="/home" class="btn btn-outline-dark">Volver a listado</a>
-                </div>
             </div>
         </div>
     </div>
-</body>
-
+</section>

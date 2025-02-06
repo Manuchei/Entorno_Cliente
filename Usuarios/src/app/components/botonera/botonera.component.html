@@ -1,0 +1,10 @@
+<div class="btn-group">
+    @if(parent == 'card'){
+        <a [routerLink]="['/user', _id]" class="btn btn-outline-secondary"> Ver detalle</a>
+    }@else if(parent == 'view'){
+        <a [routerLink]="['/users']" class="btn btn-secondary"> Volver al listado</a>
+    }
+    <a [routerLink]="['/actualizar','serie', _id]" class="btn btn-outline-primary">Actualizar</a>
+    <button class="btn btn-outline-danger" (click)="borrarSerie(_id)">Borrar</button>
+</div>
+
