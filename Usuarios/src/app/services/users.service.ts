@@ -1,7 +1,7 @@
+import { User } from './../interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { lastValueFrom, Observable } from 'rxjs';
-import { User } from '../interfaces/user';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,11 +12,29 @@ export class UsersService {
 
   constructor() {}
 
-  getAllWithPromises(): Promise<User[]> {
-    return lastValueFrom(this.httpClient.get<User[]>(this.baseUrl));
+  async getAllWithPromises(): Promise<User[]> {
+    const response = await lastValueFrom(
+      this.httpClient.get<{ results: User[] }>(this.baseUrl)
+    );
+    return response.results ?? [];
   }
 
   getById(_id: string): Promise<User> {
     return lastValueFrom(this.httpClient.get<User>(`${this.baseUrl}/${_id}`));
+  }
+
+  insert(user: User): Promise<User> {
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, user));
+  }
+
+  update(user: User): Promise<User> {
+    return lastValueFrom(
+      this.httpClient.put<User>(this.baseUrl + '/' + user._id, user)
+    );
+  }
+  delete(_id: string): Promise<User> {
+    return lastValueFrom(
+      this.httpClient.delete<User>(`${this.baseUrl}/${_id}`)
+    );
   }
 }
